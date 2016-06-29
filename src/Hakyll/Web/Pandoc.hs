@@ -138,7 +138,7 @@ pandocCompilerWithTransformM :: ReaderOptions -> WriterOptions
                     -> Compiler (Item String)
 pandocCompilerWithTransformM ropt wopt f =
     writePandocWith wopt <$>
-        (traverse f =<< readPandocWith ropt =<< getResourceBody)
+        (traverse f =<< readPandocWith ropt =<< getResourceString)
 
 
 --------------------------------------------------------------------------------
